@@ -8,7 +8,10 @@ function getWeather() {
             // Update the DOM with data from the API
             document.getElementById('temperature').textContent = objData.current.temperature_2m  //loads the temperature element with the temp value from the API response
             document.getElementById('humidity').textContent = objData.current.relative_humidity_2m  //loads the humidity element with the humidity value from the API response
-            document.getElementById('condition').textContent = getWeatherCondition(objData.current.weather_code) //calls the getWeatherCondition function to load the condition element with the correct value from the API response
+            getWeatherCondition(objData.current.weather_code)  //calls the getWeatherCondition function to load the condition element with the correct value from the API response
+
+            //setting an icon for humidity
+            //document.getElementById('humidity-icon').src = 'images/humidity.png'
         })
         .catch(error => console.error('Error fetching weather data:', error));
 }
@@ -22,7 +25,7 @@ function getWeatherCondition(code) {
     switch (code) {
         //different cases represent a different code variable and provides the specific string it represents
         case 0:
-            icon = 'images/clear_sky.png'
+            icon = 'images/clear_icon.png'
             description = 'Clear Sky'  //if code is 0, return clear sky. this trend continues throughout the function so i won't comment it for every line
             break
         case 1:

@@ -90,3 +90,7 @@ function getWeatherCondition(code) {
 
 // Call the function to fetch and display the weather
 getWeather();
+
+
+
+//Used Generative AI to help troubleshoot errors I was getting with the icons. Also used it to explain what a manifest does.
